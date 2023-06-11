@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import Row from './row';
 
 function App() {
+  var data=[
+    {id: 1, name: 'Aditya', age: 30, place: 'Mumbai'},
+{id: 2, name: 'Anjali', age: 25, place: 'Delhi'},
+{id: 3, name: 'Rishabh', age: 40, place: 'Bangalore'},
+{id: 4, name: 'Sakshi', age: 35, place: 'Chennai'},
+{id: 5, name: 'Rohit', age: 20, place: 'Kolkata'}
+]
+
+          console.log(data);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <table>
+        {
+          data.map((rdata)=>{
+            console.log(rdata);
+            return <Row key={rdata.id} propData={rdata} />
+          })
+        }
+      </table>
     </div>
   );
 }
