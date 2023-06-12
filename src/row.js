@@ -1,12 +1,11 @@
-import { prettyDOM } from '@testing-library/react'
+
 import React from 'react'
 
-const Row = ({propData}) => {
-    console.log(propData,"rdata")
+const Row = ({propData,val,setVal}) => {
   return (
     <tr>
         <td>
-            <input type="checkbox" name="" id="" />
+            <input className='check' type="checkbox" name="" id="" onChange={()=>{setVal(propData.id)}} />
         </td>
         <td>{propData.id}</td>
         <td>{propData.name}</td>
