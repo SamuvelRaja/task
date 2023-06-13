@@ -2,7 +2,8 @@ import './App.css';
 import Row from './row';
 import { useState } from 'react';
 import listData from './list';
-
+import { Link
+ } from 'react-router-dom';
 function Home() {
   var data=listData
  const[value, setValue]=useState("")
@@ -10,7 +11,7 @@ function Home() {
     console.log(value)
   return (
     <div className="App">
-      <a href={ window.location.origin+"/edit/"+value} className="edit-btn">edit</a>
+       <Link to={"/edit/"+value} className="edit-btn">edit</Link>
       <table>
         <tbody>
         {
